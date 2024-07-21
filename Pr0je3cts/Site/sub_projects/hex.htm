@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color to Hex Converter</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #colorPicker {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #hexValue {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Color to Hex Converter</h1>
+        <input type="color" id="colorPicker">
+        <div id="hexValue"></div>
+    </div>
+    <script>
+        const colorPicker = document.getElementById('colorPicker');
+        const hexValue = document.getElementById('hexValue');
+
+        colorPicker.addEventListener('input', () => {
+            const color = colorPicker.value;
+            hexValue.textContent = `Hex Value: ${color}`;
+        });
+    </script>
+</body>
+</html>

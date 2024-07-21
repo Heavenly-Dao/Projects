@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navigation">
+            <button id="backBtn">Back</button>
+            <button id="forwardBtn">Forward</button>
+            <button id="refreshBtn">Refresh</button>
+            <button id="homeBtn">Home</button>
+            <input type="text" id="urlInput" placeholder="Enter URL">
+            <button id="goBtn">Go</button>
+        </div>
+    </header>
+    <main>
+        <iframe id="webView" src="https://nhentai.to" frameborder="0"></iframe>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

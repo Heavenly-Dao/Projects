@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Text Color</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .gradient-text {
+            font-size: 3em;
+            background: linear-gradient(45deg, #6a5acd, #8a2be2);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .color-picker {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #gradientPreview {
+            height: 100px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #000000, #ffffff);
+        }
+
+        #gradientCode {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="gradient-text">Gradient Text Color</h1>
+        <h2>Gradient Color Generator</h2>
+        <input type="color" id="colorPicker1" class="color-picker" value="#000000">
+        <input type="color" id="colorPicker2" class="color-picker" value="#ffffff">
+        <div id="gradientPreview"></div>
+        <div id="gradientCode">linear-gradient(45deg, #000000, #ffffff)</div>
+    </div>
+    <script>
+        const colorPicker1 = document.getElementById('colorPicker1');
+        const colorPicker2 = document.getElementById('colorPicker2');
+        const gradientPreview = document.getElementById('gradientPreview');
+        const gradientCode = document.getElementById('gradientCode');
+        const gradientText = document.querySelector('.gradient-text');
+
+        function updateGradient() {
+            const color1 = colorPicker1.value;
+            const color2 = colorPicker2.value;
+            const gradient = `linear-gradient(45deg, ${color1}, ${color2})`;
+            gradientPreview.style.background = gradient;
+            gradientCode.textContent = gradient;
+            gradientText.style.background = gradient;
+            gradientText.style.webkitBackgroundClip = 'text';
+            gradientText.style.color = 'transparent';
+        }
+
+        colorPicker1.addEventListener('input', updateGradient);
+        colorPicker2.addEventListener('input', updateGradient);
+
+        // Initial update
+        updateGradient();
+    </script>
+</body>
+</html>

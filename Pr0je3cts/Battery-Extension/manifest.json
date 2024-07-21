@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Battery Status",
+  "version": "2.0.0",
+  "description": "Displays battery Percentage + Time Remaining",
+  "action": {
+    "default_title": "Battery Status",
+    "default_popup": "index.html"
+  },
+  "permissions": ["power", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "48": "pug48.png"
+  }
+}

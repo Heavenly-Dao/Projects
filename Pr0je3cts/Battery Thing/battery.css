@@ -1,0 +1,39 @@
+.battery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery-icon {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
+    border: 2px solid #000000;
+    border-radius: 2px;
+}
+
+.battery-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--level, 0%);
+    background-color: #106ae0;
+    border-radius: 0 0 2px 2px;
+    transition: height 0.5s ease;
+}
+
+.battery-text {
+    margin-left: 60px;
+}
+
+.battery-percent {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.battery-time {
+    font-size: 1em;
+    color: #666;
+}

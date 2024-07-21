@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich Text Editor</title>
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="stylesheet" href="styles/doc.css">
+</head>
+<body>
+  <div id="toolbar" aria-label="Text editor toolbar">
+    <button id="openFileButton" title="Open File">Open File</button>
+    <button id="saveContentButton" title="Download">Save as .txt</button>
+    <button id="boldButton" title="Bold"><b>B</b></button>
+    <button id="italicButton" title="Italic"><i>I</i></button>
+    <button id="underlineButton" title="Underline"><u>U</u></button>
+    <input type="color" id="textColorPicker" title="Text Color">
+    <input type="color" id="highlightColorPicker" title="Highlight Color">
+    <button id="helpButton" title="Help">?</button>
+  </div>
+  <div id="editor" contenteditable="true" aria-label="Text editor">Type here...</div>
+  <div id="status-bar">Word count: <span id="word-count">0</span></div>
+  <div class="file-options">
+    <input type="file" id="fileInput" style="display: none;">
+  </div>
+  <script src="scripts/Doc.js"></script>
+</body>
+</html>

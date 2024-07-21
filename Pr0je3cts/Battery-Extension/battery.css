@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000; /* Optional: to match the battery container background */
+}
+
+.battery-container {
+    /* Adjusted to fit the viewport */
+    width: 100%;
+    max-width: 175px;
+    height: 100%;
+    max-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #000000;
+}
+
+.battery-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    background-color: #87CEEB;
+    position: relative;
+}
+
+.battery-level {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: currentColor;
+    border-radius: 2px;
+    transform-origin: bottom;
+    transition: height 0.2s ease-in-out;
+}
+
+.low .battery-level {
+    background-color: red;
+}
+
+.medium .battery-level {
+    background-color: yellow;
+}
+
+.high .battery-level {
+    background-color: #87CEEB;
+}
+
+.battery-text {
+    text-align: right;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-weight: bold;
+}

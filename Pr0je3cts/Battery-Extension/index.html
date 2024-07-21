@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Status Example</title>
+    <link rel="stylesheet" href="battery.css">
+</head>
+<body>
+    <div id="batteryLevel" class="battery-container" aria-live="polite">
+        <div class="battery-icon" role="img" aria-label="Battery Icon">
+            <div class="battery-level"></div>
+        </div>
+        <div class="battery-text">
+            <span id="batteryPercent" class="battery-percent" aria-live="polite"></span>
+            <span id="batteryTime" class="battery-time" aria-live="polite"></span>
+        </div>
+    </div>
+
+    <script src="battery.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* Separate CSS for iframe container */
+.iframe-container iframe {
+    width: 50%;
+    height: justify;
+}
+
+.iframes {
+    position: absolute;
+    left: justify;
+}

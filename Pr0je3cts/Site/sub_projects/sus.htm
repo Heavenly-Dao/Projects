@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Material</title>
+    <style>
+        /* Reset default styles */
+        body {
+            background: black;
+            color: white;
+            font: bold 16px courier;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        .warning-message {
+            color: red;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Add some space above the iframe */
+        }
+
+        .iframe-container iframe {
+            width: 100%; /* Make sure the iframe fills its container */
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="warning-message">
+        <h1>Content Warning</h1>
+        <h2>This section contains content that may not be suitable for all audiences.</h2>
+    </div>
+
+    <!-- Button to toggle fullscreen for the first iframe -->
+    <button id="toggleFullscreen1">Toggle Fullscreen for NH</button>
+
+    <!-- iframe container for the first iframe -->
+    <section class="iframe-container" id="iframe-container1">
+        <iframe id="homework1" src="https://nhentai.to" referrerpolicy="strict-origin" 
+            sandbox="allow-same-origin allow-scripts allow-forms allow-popups" 
+            x-frame-options="deny" x-content-type-options="nosniff" 
+            title="Embedded Content from nhentai.to">
+            <!-- Provide alternative content or a message for users without iframe support -->
+            <p>Your browser does not support iframes.</p>
+        </iframe> 
+    </section>
+
+    <!-- Button to toggle fullscreen for the second iframe -->
+    <button id="toggleFullscreen2">Toggle Fullscreen for HH</button>
+
+    <!-- iframe container for the second iframe -->
+    <section class="iframe-container" id="iframe-container2">
+        <iframe id="homework2" src="https://hentaihaven.com" referrerpolicy="strict-origin" 
+            sandbox="allow-same-origin allow-scripts allow-forms allow-popups" 
+            x-frame-options="deny" x-content-type-options="nosniff" 
+            title="Embedded Content from hentaihaven.com">
+            <!-- Provide alternative content or a message for users without iframe support -->
+            <p>Your browser does not support iframes.</p>
+        </iframe> 
+    </section>
+
+    <script>
+        // Function to toggle fullscreen mode for the first iframe
+        function toggleFullscreen1() {
+            var iframe = document.getElementById('homework1');
+            var iframeContainer = document.getElementById('iframe-container1');
+
+            if (!document.fullscreenElement) {
+                // If fullscreen mode is not active, make the iframe fullscreen
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframeContainer.mozRequestFullScreen) { // Firefox
+                    iframeContainer.mozRequestFullScreen();
+                } else if (iframeContainer.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    iframeContainer.webkitRequestFullscreen();
+                } else if (iframeContainer.msRequestFullscreen) { // IE/Edge
+                    iframeContainer.msRequestFullscreen();
+                }
+            } else {
+                // If fullscreen mode is active, exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Add click event listener to the first button
+        document.getElementById('toggleFullscreen1').addEventListener('click', toggleFullscreen1);
+
+        // Function to toggle fullscreen mode for the second iframe
+        function toggleFullscreen2() {
+            var iframe = document.getElementById('homework2');
+            var iframeContainer = document.getElementById('iframe-container2');
+
+            if (!document.fullscreenElement) {
+                // If fullscreen mode is not active, make the iframe fullscreen
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframeContainer.mozRequestFullScreen) { // Firefox
+                    iframeContainer.mozRequestFullScreen();
+                } else if (iframeContainer.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    iframeContainer.webkitRequestFullscreen();
+                } else if (iframeContainer.msRequestFullscreen) { // IE/Edge
+                    iframeContainer.msRequestFullscreen();
+                }
+            } else {
+                // If fullscreen mode is active, exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Add click event listener to the second button
+        document.getElementById('toggleFullscreen2').addEventListener('click', toggleFullscreen2);
+    </script>
+</body>
+</html>

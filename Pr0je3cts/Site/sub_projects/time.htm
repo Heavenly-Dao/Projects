@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time and Date</title>
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    .clock-text {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+    .date-text {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .back-link {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .back-link a {
+        color: white;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+<div class="clock-text" id="clockText"></div>
+<div class="date-text" id="dateText"></div>
+
+<script>
+    function updateTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('en-US', options);
+
+        document.getElementById('clockText').textContent = timeString;
+        document.getElementById('dateText').textContent = dateString;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
+</body>
+</html>

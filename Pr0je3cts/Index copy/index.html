@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Import and Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>File Import and Search</h1>
+        <button onclick="openSettings()">Settings</button>
+        <div class="import-toggle">
+            <label>Import Mode:</label>
+            <label>
+                <input type="radio" name="import-mode" value="file" onchange="toggleImportMode()" checked> File
+            </label>
+            <label>
+                <input type="radio" name="import-mode" value="folder" onchange="toggleImportMode()"> Folder
+            </label>
+        </div>
+        <div class="file-input">
+            <label for="file">Import File/Folder:</label>
+            <input type="file" id="file" multiple>
+            <button onclick="prepareImport()">Import</button>
+        </div>
+        <div class="search-input">
+            <label for="search">Search:</label>
+            <input type="text" id="search" oninput="searchFiles()">
+        </div>
+        <div class="file-list" id="file-list">
+            <!-- List of files will be displayed here -->
+        </div>
+        <div class="timeline" id="timeline">
+            <h2>Timeline</h2>
+            <button onclick="clearTimeline()">Clear Timeline</button>
+            <div id="timeline-entries">
+                <!-- Timeline entries will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for import summary -->
+    <div id="tag-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Import Summary</h2>
+            <div id="import-summary">
+                <div id="import-summary-list">
+                    <!-- Import summary will be dynamically added here -->
+                </div>
+            </div>
+            <button onclick="confirmImport()">Confirm Import</button>
+        </div>
+    </div>
+
+    <!-- Modal for settings -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSettings()">&times;</span>
+            <h2>Settings</h2>
+            <label for="bg-color">Background Color:</label>
+            <input type="color" id="bg-color">
+            <label for="text-color">Text Color:</label>
+            <input type="color" id="text-color">
+            <label for="text-size">Text Size:</label>
+            <input type="number" id="text-size" min="10" max="50">
+            <label for="font-family">Font Family:</label>
+            <select id="font-family">
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <button onclick="saveSettings()">Save Settings</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

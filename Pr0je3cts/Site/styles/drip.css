@@ -1,0 +1,103 @@
+/* Define colors as CSS variables */
+:root {
+  --purple: #8A2BE2;
+  --crimson: #DC143C;
+  --gold: #FFD700;
+  --blue: #87CEEB;
+}
+
+/* Body styles */
+body {
+  background: black;
+  color: white;
+  font: bold 16px courier;
+  text-align: center;
+}
+
+/* Reset Button styles */
+.reset-site-button {
+  background: #dc3545;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+}
+
+/* Container adjustments */
+.image-section,
+.page-links-container {
+  text-align: center;
+  margin-bottom: 1px; /* Add spacing between lines */
+}
+
+/* Adjustments for Image Gallery */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 2500px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  margin: 1px;
+}
+
+/* Page Links styles */
+.other_html a {
+  display: block;
+  margin: 1px 0;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* Container for Page Links */
+.page-links-container {
+  padding: 1px;
+  border: 1px solid yellow;
+}
+
+/* Heading for Page Links */
+.page-links-container h2 {
+  margin-bottom: 2px;
+  color: #333;
+}
+
+/* Iframe styles */
+.iframes {
+  position: absolute;
+  left: justify; 
+}
+
+/* Common styles for titles and text */
+.text {
+  font-weight: bold;
+  padding: 10px; /* Add spacing between lines */
+}
+
+/* Individual title styles */
+.gradient-text {
+  font-size: 1.5em;
+  background: linear-gradient(45deg, var(--purple), var(--crimson), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Individual text styles */
+.text-blue {
+  color: var(--blue);
+}
+
+.text-red {
+  color: red;
+}
+
+.text-green {
+  color: green;
+}
